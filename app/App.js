@@ -39,7 +39,7 @@ function App() {
     }
 
     return (
-            <AuthContext.Provider value={}>
+            <AuthContext.Provider value={''}>
                 <NavigationContainer>
                     <RootStack.Navigator
                         screenOptions={{
