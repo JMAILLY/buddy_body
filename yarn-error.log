@@ -1,0 +1,54 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  E:\ecv\buddy_body\node_modules\.bin;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Julian\AppData\Roaming\Composer\vendor\drush\drush;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Julian\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Julian\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Julian\AppData\Local\Programs\Python\Python38-32\;E:\xampp\php;C:\Users\Julian\AppData\Roaming\Composer\vendor\bin;C:\Users\Julian\AppData\Local\Yarn\bin;C:\Users\Julian\AppData\Roaming\npm;C:\Users\Julian\AppData\Local\Microsoft\WindowsApps;C:\Users\Julian\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PhpStorm 2019.3.3\bin;;C:\Program Files\Lando\bin;C:\Users\Julian\AppData\Roaming\nvm;C:\Program Files\nodejs;
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  14.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: E:\ecv\buddy_body\package.json: Unexpected token } in JSON at position 510
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www"
+    },
+    "dependencies": {
+      "bcrypt": "^5.0.1",
+      "cookie-parser": "~1.4.4",
+      "cors": "^2.8.5",
+      "debug": "~2.6.9",
+      "express": "~4.16.1",
+      "express-flash": "^0.0.2",
+      "express-session": "^1.17.1",
+      "http-errors": "~1.6.3",
+      "jade": "~1.11.0",
+      "morgan": "~1.9.1",
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.7",
+      "passport": "^0.4.1",
+      "passport-local": "^1.0.0",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

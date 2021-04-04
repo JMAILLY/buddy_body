@@ -4,7 +4,7 @@
   "devToolsPort": 19002,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://se-53q.anonymous.app.exp.direct",
+  "packagerNgrokUrl": "https://packager.se-53q.anonymous.app.exp.direct",
+  "ngrokPid": 10212
 }
