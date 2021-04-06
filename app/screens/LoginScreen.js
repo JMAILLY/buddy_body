@@ -1,25 +1,27 @@
 import React, {useState} from 'react';
 import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import config from '../config';
-import Axios from 'axios';
+import {AuthContext} from '../contexts/AuthContext';
 
 function LoginScreen({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [error, setError] = React.useState('');
+    const {login} = React.useContext(AuthContext);
 
-    const login = () => {
-        Axios.post(config.API_URL + '/users/login', {
-            email: email,
-            password: password
-        }).then((response) => {
-            if (response.data.message){
-                setMessage(response.data.message)
-            }else{
-                setMessage("Hello " + response.data[0].firstname)
-            }
-        });
-    }
+    // const login = () => {
+    //     Axios.post(config.API_URL + '/users/login', {
+    //         email: email,
+    //         password: password
+    //     }).then((response) => {
+    //         if (response.data.message){
+    //             setMessage(response.data.message)
+    //         }else{
+    //             setMessage("Hello " + response.data[0].firstname)
+    //         }
+    //     });
+    // }
 
     return (
         <KeyboardAvoidingView behavior='padding'>
@@ -32,7 +34,14 @@ function LoginScreen({navigation}) {
                 <TextInput secureTextEntry={true} placeholder={'Password'} onChange={(e) => {
                     setPassword(e.target.value);
                 }}/>
-                <TouchableOpacity onPress={login}>
+                <TouchableOpacity
+                    onPress={async () => {
+                    try {
+                        await login(email, password);
+                    } catch (e) {
+                        setError(e.message);
+                    }
+                }}>
                     <Text>Log in</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Register')}>
