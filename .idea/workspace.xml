@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c91ce70-0fb5-4c56-afb7-ef3bad8e1d40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,24 +25,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/contexts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/screens/profile" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ecv\buddy_body\app\screens\profile" />
+      <recent name="E:\ecv\buddy_body\app\navigators" />
+      <recent name="E:\ecv\buddy_body\app\screens" />
+      <recent name="E:\ecv\buddy_body\app" />
+      <recent name="E:\ecv\buddy_body\app\contexts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\ecv\buddy_body\backend\app" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\ecv\buddy_body\app\contexts" />
-      <recent name="E:\ecv\buddy_body\app\screens" />
-      <recent name="E:\ecv\buddy_body\app" />
-      <recent name="E:\ecv\buddy_body" />
-    </key>
   </component>
-  <component name="RunManager" selected="npm.start (1)">
+  <component name="RunManager" selected="npm.start">
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
@@ -65,8 +66,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.start (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -95,7 +96,12 @@
       <workItem from="1617297880108" duration="1310000" />
       <workItem from="1617347401303" duration="6106000" />
       <workItem from="1617365909836" duration="15031000" />
-      <workItem from="1617526878974" duration="4081000" />
+      <workItem from="1617526878974" duration="6218000" />
+      <workItem from="1617717964463" duration="5918000" />
+      <workItem from="1617783319598" duration="14000" />
+      <workItem from="1617784793777" duration="622000" />
+      <workItem from="1617955866921" duration="16148000" />
+      <workItem from="1618143117329" duration="5816000" />
     </task>
     <servers />
   </component>
@@ -103,34 +109,34 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617374187128">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617973121571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617374187128" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1617526978791">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617973121571" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1618148105265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617526978791" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618148105265" />
     <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616160858115" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1617526978791">
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1618148105265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617526978791" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618148105265" />
     <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616160858115" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1617526978791">
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1618148105265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617526978791" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618148105265" />
     <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616160858115" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1617526978791">
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1618148105265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617526978791" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618148105265" />
     <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616160858115" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1617529874041">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1618143860558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617529874041" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1618143860558" />
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616155686711" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1616151437470">
       <screen x="0" y="0" width="1920" height="1040" />

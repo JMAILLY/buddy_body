@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AuthStackNavigator} from './navigators/AuthStackNavigator';
 import {MainStackNavigator} from './navigators/MainStackNavigator';
+import {ProfileStackNavigator} from './navigators/ProfileStackNavigator';
 import {UserContext} from './contexts/UserContext';
 import {AuthContext} from './contexts/AuthContext';
 import {useAuth} from './hooks/useAuth';
@@ -20,9 +21,15 @@ function App() {
         return state.user ? (
             <RootStack.Screen name={'MainStack'}>
                 {() => (
-                    <UserContext.Provider value={state.user}>
-                        <MainStackNavigator />
-                    </UserContext.Provider>
+                    state.user.firstname && state.user.lastname ? (
+                        <UserContext.Provider value={state.user}>
+                            <MainStackNavigator />
+                        </UserContext.Provider>
+                    ) : (
+                        <UserContext.Provider value={state.user}>
+                            <ProfileStackNavigator />
+                        </UserContext.Provider>
+                    )
                 )}
             </RootStack.Screen>
         ) : (

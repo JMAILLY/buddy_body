@@ -1,32 +1,27 @@
 import React, {useState} from 'react';
 import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import config from '../config';
+import Axios from "axios";
+import config from "../config";
 import {AuthContext} from '../contexts/AuthContext';
 
-function LoginScreen({navigation}) {
-    const [email, setEmail] = useState('');
+function RegisterScreenMail({route, navigation}) {
+    const { emailUser } = route.params;
+    const {register} = React.useContext(AuthContext);
+    const [email, setEmail] = useState(emailUser);
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    const {login} = React.useContext(AuthContext);
 
-    // const login = () => {
-    //     Axios.post(config.API_URL + '/users/login', {
-    //         email: email,
-    //         password: password
-    //     }).then((response) => {
-    //         if (response.data.message){
-    //             setMessage(response.data.message)
-    //         }else{
-    //             setMessage("Hello " + response.data[0].firstname)
-    //         }
-    //     });
-    // }
-    const handleLogin = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault()
         try {
-            let response = await login(email, password);
-            if (response.message){
+            let response = await register(email, password);
+            if (response.type === "mailError"){
                 setMessage(response.message)
+            }else{
+                setMessage(response.message)
+                setTimeout(function(){
+                    navigation.navigate('LoginStack')
+                }, 3000);
             }
         } catch (e) {
             setMessage(e.message);
@@ -36,20 +31,16 @@ function LoginScreen({navigation}) {
     return (
         <KeyboardAvoidingView behavior='padding'>
             <View style={styles.container}>
-                <Text>Email</Text>
-                <TextInput placeholder={'Email'} onChange={(e) => {
-                    setEmail(e.target.value);
-                }}/>
                 <Text>Password</Text>
                 <TextInput secureTextEntry={true} placeholder={'Password'} onChange={(e) => {
                     setPassword(e.target.value);
                 }}/>
                 <TouchableOpacity
-                    onPress={handleLogin}>
-                    <Text>Log in</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('RegisterStack')}>
+                    onPress={handleRegister}>
                     <Text>Register</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.pop()}>
+                    <Text>return</Text>
                 </TouchableOpacity>
                 <Text>{message}</Text>
             </View>
@@ -66,4 +57,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginScreen
+export default RegisterScreenMail
