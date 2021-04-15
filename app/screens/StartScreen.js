@@ -4,16 +4,19 @@ import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../contexts/AuthContext';
 
 export default function StartScreen({navigation}) {
-
+    console.log(navigation)
     return (
         <View style={styles.container}>
-            <Text>Start Screen</Text>
             <TouchableOpacity onPress={() => navigation.navigate('Tutorial')}>
                 <Text>Get started</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginStack')}>
-                <Text>Sign in</Text>
-            </TouchableOpacity>
+            <Text>
+                Already have an account?
+                <TouchableOpacity onPress={() => navigation.navigate('LoginStack')}>
+                    <Text> Sign in</Text>
+                </TouchableOpacity>
+            </Text>
+
         </View>
     );
 }

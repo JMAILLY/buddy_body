@@ -2,10 +2,11 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import LoginScreen from '../screens/LoginScreen';
-import RegisterScreenMail from '../screens/RegisterScreenMail';
-import RegisterScreenPassword from '../screens/RegisterScreenPassword';
+import RegisterScreen from '../screens/RegisterScreen';
 import StartScreen from '../screens/StartScreen';
 import TutorialScreen from '../screens/TutorialScreen';
+import HeaderReturn from "../components/headers/HeaderReturn";
+import HeaderStart from "../components/headers/HeaderStart";
 
 const AuthStack = createStackNavigator();
 const LoginStack = createStackNavigator();
@@ -18,7 +19,7 @@ export function AuthStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-        <AuthStack.Screen name={'Start'} component={StartScreen} />
+        <AuthStack.Screen options={{headerShown: true, header: props => <HeaderStart {...props}/> }} name={'Start'} component={StartScreen} />
         <AuthStack.Screen name={'Tutorial'} component={TutorialScreen} />
         <AuthStack.Screen name={'LoginStack'}>
         {() => (
@@ -31,15 +32,14 @@ export function AuthStackNavigator() {
           </LoginStack.Navigator>
         )}
         </AuthStack.Screen>
-        <AuthStack.Screen name={'RegisterStack'}>
+        <AuthStack.Screen name={'RegisterStack'} >
             {() => (
                 <RegisterStack.Navigator
                     mode={'card'}
                     screenOptions={{
-                        headerShown: false,
+                      headerShown: false,
                     }}>
-                    <RegisterStack.Screen name={'RegisterMail'} component={RegisterScreenMail} />
-                    <RegisterStack.Screen name={'RegisterPassword'} component={RegisterScreenPassword} />
+                    <RegisterStack.Screen name={'RegisterScreen'} component={RegisterScreen} />
                 </RegisterStack.Navigator>
             )}
         </AuthStack.Screen>

@@ -3,13 +3,12 @@ import React, { useState, useEffect } from 'react';
 import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 
-export default function ProfileStartScreen({navigation}) {
+export default function ProfileStep10Screen({navigation}) {
     const {logout} = React.useContext(AuthContext);
 
     //To next profile step
     const handleNext = async (e) => {
         e.preventDefault()
-        navigation.navigate('ProfileStep1Screen')
     }
 
     //Disable Skip, it's now necessary to complete the profile to use the app
@@ -22,7 +21,7 @@ export default function ProfileStartScreen({navigation}) {
             <Text>Profile Start</Text>
             <TouchableOpacity
                 onPress={handleNext}>
-                <Text>Continue</Text>
+                <Text>Finish</Text>
             </TouchableOpacity>
             {/*<TouchableOpacity*/}
             {/*    onPress={handleSkip}>*/}
