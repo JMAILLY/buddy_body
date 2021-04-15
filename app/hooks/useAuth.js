@@ -35,7 +35,8 @@ export function useAuth() {
                         password: password
                     },{
                         headers: {
-                            'Bypass-Tunnel-Reminder': 'ok'
+                            'Bypass-Tunnel-Reminder': 'ok',
+                            'User-Agent': 'Buddy-body',
                         }
                     }
                 );
@@ -62,7 +63,8 @@ export function useAuth() {
                     password: password
                 },{
                         headers: {
-                            'Bypass-Tunnel-Reminder': 'ok'
+                            'Bypass-Tunnel-Reminder': 'ok',
+                            'User-Agent': 'Buddy-body',
                         }
                     }
                 );
@@ -73,7 +75,8 @@ export function useAuth() {
                     email: email,
                     },{
                         headers: {
-                            'Bypass-Tunnel-Reminder': 'ok'
+                            'Bypass-Tunnel-Reminder': 'ok',
+                            'User-Agent': 'Buddy-body',
                         }
                     }
                 );

@@ -15,6 +15,7 @@ export function useGet(endpoint, initialValue = []) {
         headers: {
           Authorization: `bearer ${token}`,
           'Bypass-Tunnel-Reminder': 'ok',
+          'User-Agent': 'Buddy-body',
         },
       })
       .then(({data}) => {
