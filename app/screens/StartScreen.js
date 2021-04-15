@@ -4,7 +4,6 @@ import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../contexts/AuthContext';
 
 export default function StartScreen({navigation}) {
-    console.log(navigation)
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => navigation.navigate('Tutorial')}>
@@ -16,7 +15,6 @@ export default function StartScreen({navigation}) {
                     <Text> Sign in</Text>
                 </TouchableOpacity>
             </Text>
-
         </View>
     );
 }

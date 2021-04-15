@@ -14,6 +14,7 @@ export function useGet(endpoint, initialValue = []) {
       .get(`${config.API_URL}${endpoint}`, {
         headers: {
           Authorization: `bearer ${token}`,
+          'Bypass-Tunnel-Reminder': 'ok',
         },
       })
       .then(({data}) => {

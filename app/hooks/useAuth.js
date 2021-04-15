@@ -33,8 +33,12 @@ export function useAuth() {
                 const {data} = await Axios.post(config.API_URL + '/users/login', {
                         email: email,
                         password: password
-                    })
-                ;
+                    },{
+                        headers: {
+                            'Bypass-Tunnel-Reminder': 'ok'
+                        }
+                    }
+                );
                 if (data.message) {
                     return data
                 } else {
@@ -56,13 +60,23 @@ export function useAuth() {
                 const {data} = await Axios.post(config.API_URL + '/users/register', {
                     email: email,
                     password: password
-                });
+                },{
+                        headers: {
+                            'Bypass-Tunnel-Reminder': 'ok'
+                        }
+                    }
+                );
                 return data
             },
             isEmailInUse: async (email) => {
                 const {data} = await Axios.post(config.API_URL + '/users/isEmailInUse', {
                     email: email,
-                });
+                    },{
+                        headers: {
+                            'Bypass-Tunnel-Reminder': 'ok'
+                        }
+                    }
+                );
                 return data
             },
         }),
