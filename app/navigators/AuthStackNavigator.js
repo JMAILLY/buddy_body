@@ -5,7 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import StartScreen from '../screens/StartScreen';
 import TutorialScreen from '../screens/TutorialScreen';
-import HeaderReturn from "../components/headers/HeaderReturn";
+import HeaderAuth from "../components/headers/HeaderAuth";
 import HeaderStart from "../components/headers/HeaderStart";
 
 const AuthStack = createStackNavigator();
@@ -19,8 +19,8 @@ export function AuthStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-        <AuthStack.Screen options={{headerShown: true, header: props => <HeaderStart {...props}/> }} name={'Start'} component={StartScreen} />
-        <AuthStack.Screen name={'Tutorial'} component={TutorialScreen} />
+        <AuthStack.Screen options={{headerShown: true, header: props => <HeaderStart {...props}/> }} name={'StartScreen'} component={StartScreen} />
+        <AuthStack.Screen name={'TutorialScreen'} component={TutorialScreen} />
         <AuthStack.Screen name={'LoginStack'}>
         {() => (
           <LoginStack.Navigator
@@ -28,7 +28,7 @@ export function AuthStackNavigator() {
             screenOptions={{
               headerShown: false,
             }}>
-            <LoginStack.Screen name={'Login'} component={LoginScreen} />
+            <LoginStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/> }} name={'LoginScreen'} component={LoginScreen} />
           </LoginStack.Navigator>
         )}
         </AuthStack.Screen>
@@ -39,7 +39,7 @@ export function AuthStackNavigator() {
                     screenOptions={{
                       headerShown: false,
                     }}>
-                    <RegisterStack.Screen name={'RegisterScreen'} component={RegisterScreen} />
+                    <RegisterStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/> }} name={'RegisterScreen'} component={RegisterScreen} />
                 </RegisterStack.Navigator>
             )}
         </AuthStack.Screen>
