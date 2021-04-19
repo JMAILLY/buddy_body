@@ -29,19 +29,19 @@ function LoginScreen({navigation}) {
             <View style={styles.wrapper}>
                 <View style={styles.full}>
                     <Text style={styles.title}>Login</Text>
-                    <Text>Email</Text>
-                    <TextInput placeholder={'Email'} onChange={(e) => {
+                    <Text style={styles.label}>Email</Text>
+                    <TextInput style={styles.input} placeholder={'Email'} onChange={(e) => {
                         setEmail(e.target.value);
                     }}/>
-                    <Text>Password</Text>
-                    <TextInput secureTextEntry={true} placeholder={'Password'} onChange={(e) => {
+                    <Text style={styles.label2}>Password</Text>
+                    <TextInput style={styles.input} secureTextEntry={true} placeholder={'Password'} onChange={(e) => {
                         setPassword(e.target.value);
                     }}/>
-                    <Text>{message}</Text>
+                    <Text style={styles.message}>{message}</Text>
                 </View>
                 <View style={styles.content}>
                     <TouchableOpacity style={[styles.button,styles.plain]} onPress={handleLogin}>
-                        <Text style={[styles.text,styles.plainText]}>Login</Text>
+                        <Text style={[styles.text,styles.plainText]}>Continue</Text>
                         <LinearGrad/>
                     </TouchableOpacity>
                     <BasicButton data={'clear'}
@@ -97,6 +97,31 @@ const styles = StyleSheet.create({
     plainText : {
         color: 'white',
     },
+    label : {
+        color: '#34CC98',
+        fontSize: 12,
+        marginBottom: 5
+    },
+    label2 : {
+        color: '#34CC98',
+        fontSize: 12,
+        marginBottom: 5,
+        marginTop: 15
+    },
+    input : {
+        borderRadius: 30,
+        borderWidth: 2,
+        borderColor: '#34CC98',
+        paddingLeft: 25,
+        paddingRight: 25,
+        paddingTop: 15,
+        paddingBottom: 15
+    },
+    message : {
+        fontWeight: '600',
+        marginTop: 30,
+        textAlign: 'center'
+    }
 });
 
 export default LoginScreen
