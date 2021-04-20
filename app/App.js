@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Button, StyleSheet, View} from 'react-native';
 import config from './config';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AuthStackNavigator} from './navigators/AuthStackNavigator';
 import {MainStackNavigator} from './navigators/MainStackNavigator';
@@ -15,6 +15,16 @@ const RootStack = createStackNavigator();
 function App() {
 
     const {auth, state} = useAuth();
+
+    const lightTheme = {
+        ...DefaultTheme,
+        colors: {
+            ...DefaultTheme.colors,
+            background: 'red',
+            primary: 'purple',
+            text: 'black',
+        },
+    };
 
     function renderScreens() {
 
@@ -39,7 +49,7 @@ function App() {
 
     return (
         <AuthContext.Provider value={auth}>
-            <NavigationContainer>
+            <NavigationContainer theme={lightTheme}>
                 <RootStack.Navigator
                     screenOptions={{
                         headerShown: false,

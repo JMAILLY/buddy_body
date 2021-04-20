@@ -2,38 +2,21 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
+import BasicButton from "../../components/buttons/BasicButton";
 
 export default function ProfileStep3Screen({navigation}) {
     const {logout} = React.useContext(AuthContext);
 
-    //To next profile step
-    const handleNext = async (e) => {
-        e.preventDefault()
-        navigation.navigate('ProfileStep4Screen')
-    }
-
-    //Disable Skip, it's now necessary to complete the profile to use the app
-    // const handleSkip = async (e) => {
-    //     e.preventDefault()
-    // }
-
     return (
         <View style={styles.container}>
-            <Text>Profile Start</Text>
-            <TouchableOpacity
-                onPress={handleNext}>
-                <Text>Continue</Text>
-            </TouchableOpacity>
-            {/*<TouchableOpacity*/}
-            {/*    onPress={handleSkip}>*/}
-            {/*    <Text>Skip for now</Text>*/}
-            {/*</TouchableOpacity>*/}
-            <Button
-                name={'log-out'}
-                onPress={() => {
-                    logout();
-                }}>
-            </Button>
+            <View>
+
+            </View>
+            <View style={styles.content}>
+                <BasicButton data={'plain'}
+                             onButtonClick={'ProfileStep4Screen'}
+                             ButtonText={'Continue'}/>
+            </View>
         </View>
     );
 }
@@ -43,6 +26,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 20,
+        paddingRight: 20,
+    },
+    content: {
+        alignSelf: 'stretch',
+        height: 115
     },
 });
