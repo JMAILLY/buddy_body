@@ -4,9 +4,10 @@ import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 
-export default function ProfileStep2Screen({navigation}) {
+export default function ProfileStep2Screen({route,navigation}) {
     const {logout} = React.useContext(AuthContext);
-
+    const [firstname, setFirstname] = useState(route.params.params.firstname);
+    const [lastname, setLastname] = useState(route.params.params.lastname);
     return (
         <View style={styles.container}>
             <View>
