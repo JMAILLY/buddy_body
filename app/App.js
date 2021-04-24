@@ -20,7 +20,7 @@ function App() {
         ...DefaultTheme,
         colors: {
             ...DefaultTheme.colors,
-            background: 'red',
+            backgroundColor: 'white',
             primary: 'purple',
             text: 'black',
         },

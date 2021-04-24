@@ -14,7 +14,7 @@ export default function LinearGrad() {
                 colors={['#39BAC4', '#34CC98']}
                 style={[styles.background]}
                 start={{x: 1.0, y: 0.5}} end={{x: 0.5, y: 1.0}}
-                locations={[0,0]}
+                // locations={[0,0]}
             />
 
     );

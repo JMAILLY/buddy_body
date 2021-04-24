@@ -33,7 +33,7 @@ function RegisterScreen({navigation}) {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container} behavior='padding'>
+        <View style={styles.container} behavior='padding'>
             <View style={styles.wrapper}>
                 <View style={styles.full}>
                     <Text style={styles.title}>Register</Text>
@@ -57,7 +57,7 @@ function RegisterScreen({navigation}) {
                                  ButtonText={'Login'}/>
                 </View>
             </View>
-        </KeyboardAvoidingView>
+        </View>
     );
 }
 

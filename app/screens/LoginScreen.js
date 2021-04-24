@@ -25,7 +25,7 @@ function LoginScreen({navigation}) {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container} behavior='padding'>
+        <View style={styles.container} behavior='padding'>
             <View style={styles.wrapper}>
                 <View style={styles.full}>
                     <Text style={styles.title}>Login</Text>
@@ -49,7 +49,7 @@ function LoginScreen({navigation}) {
                                  ButtonText={'Register'}/>
                 </View>
             </View>
-        </KeyboardAvoidingView>
+        </View>
     );
 }
 
@@ -67,17 +67,18 @@ const styles = StyleSheet.create({
     full :{
         flex: 1,
         alignSelf: 'stretch',
+        justifyContent: 'center',
     },
     wrapper : {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         paddingLeft: 20,
         paddingRight: 20,
     },
     content: {
         alignSelf: 'stretch',
-        height: 165
+        height: 130,
     },
     button : {
         height: 50,

@@ -30,14 +30,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 6,
-        },
-        shadowOpacity: 0.16,
-        shadowRadius: 10.00,
-        elevation: 1,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 6,
+        // },
+        // shadowOpacity: 0.16,
+        // shadowRadius: 10.00,
+        // elevation: 1,
     },
     text : {
         fontWeight : 'bold',

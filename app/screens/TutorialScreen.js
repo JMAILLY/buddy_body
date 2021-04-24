@@ -20,9 +20,11 @@ export default function TutorialScreen({navigation}) {
                 <BasicButton data={'white'}
                              onButtonClick={'RegisterStack'}
                              ButtonText={'Continue'}/>
+                <View style={styles.skip}>
                 <BasicButton data={''}
-                             onButtonClick={'RegisterStack'}
-                             ButtonText={'Skip'}/>
+                          onButtonClick={'RegisterStack'}
+                          ButtonText={'Skip'}/>
+                </View>
             </View>
         </View>
     );
@@ -42,8 +44,11 @@ const styles = StyleSheet.create({
         height: 165
     },
     logo : {
-        marginTop: 25,
+        marginTop: 75,
         width: 150,
         height: 150
+    },
+    skip : {
+        marginTop: 15
     }
 });

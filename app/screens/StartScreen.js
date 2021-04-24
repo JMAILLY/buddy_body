@@ -9,12 +9,14 @@ export default function StartScreen({navigation}) {
         <View style={styles.container}>
             <View style={styles.content}>
                 <BasicButton data={'plain'} onButtonClick={'TutorialScreen'} ButtonText={'Get started'}/>
-                <Text style={styles.signin}>
-                    Already have an account?
-                    <TouchableOpacity onPress={() => navigation.navigate('LoginStack')} style={styles.signinLink}>
-                        <Text> Sign in</Text>
+                <View style={styles.sig}>
+                    <Text style={styles.signin}>
+                        Already have an account?
+                    </Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('LoginStack')}>
+                        <Text style={styles.signinLink}> Sign in</Text>
                     </TouchableOpacity>
-                </Text>
+                </View>
             </View>
         </View>
     );
@@ -33,12 +35,17 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 165
     },
+    sig : {
+        flexDirection: 'row',
+        marginTop: 25,
+        textAlign: 'center',
+        justifyContent: 'center'
+    },
     signin : {
         fontWeight: '600',
-        marginTop: 25,
-        textAlign: 'center'
     },
     signinLink : {
+        fontWeight: '700',
         color : '#39BAC4'
     }
 });

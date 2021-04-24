@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, Text, View, useWindowDimensions, Dimensions, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, useWindowDimensions, Dimensions, TouchableOpacity, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import LinearGrad from "../LinearGrad";
 import Svg, { Circle, Rect } from 'react-native-svg';
@@ -12,13 +12,13 @@ export default function HeaderReturn({navigation}) {
                 <LinearGrad/>
                 <TouchableOpacity
                     onPress={() => navigation.goBack()}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill='white'>
-                        <g data-name="Layer 2"><g data-name="arrow-ios-back">
-                            <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"/>
-                            <path d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z"/>
-                        </g>
-                        </g>
-                    </svg>
+                    <Image
+                        style={styles.picto}
+                        source={{
+                            uri:
+                                " data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAPdJREFUSEvtk1FNA1EQRc9VABJwQKsA6oAqABxUQlHQoICigKIAcIAEJICC29zkNeGj4c2S3b/O79vcs3NmRkxcmjifE6BreLAi2+fAG/AtadEj/AfwDlwBH5KuRwXY3gK3wA8wk/Q1GsD2HfDUAueSPnvheS8psh0V8Z66l5ROStUF2J618Az3UdKqlNw+qgCi4hJ4lXQzJLykyPZha3aSllMAoiiQM+BB0noIpKsoYbaj5qUFLyXtqpASoEEy3E0uGFiMuqaHv/11aBl8IIH9WeUOWhdZ1cwjW/UsKcc3HqBBLoB0sK3cxKAOen977P0E6FqbXNEe3LFJGRosUDkAAAAASUVORK5CYII="
+                        }}
+                    />
                 </TouchableOpacity>
             </View>
         </View>
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     content : {
-        height:50,
         padding: 20,
         justifyContent: 'center',
         borderBottomLeftRadius: 15,
@@ -45,4 +44,8 @@ const styles = StyleSheet.create({
         shadowRadius: 10.00,
         elevation: 1,
     },
+    picto : {
+        width: 24,
+        height: 24
+    }
 });
