@@ -75,17 +75,18 @@ const styles = StyleSheet.create({
     full :{
         flex: 1,
         alignSelf: 'stretch',
+        justifyContent: 'center',
     },
     wrapper : {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         paddingLeft: 20,
         paddingRight: 20,
     },
     content: {
         alignSelf: 'stretch',
-        height: 165
+        height: 130,
     },
     button : {
         height: 50,
