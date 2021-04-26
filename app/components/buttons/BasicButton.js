@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, useWindowDimensions, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import LinearGrad from "../LinearGrad";
 import { useNavigation } from '@react-navigation/native';
 

@@ -8,7 +8,7 @@ import {useEffect, useState} from "react";
 export default function HeaderAuth({navigation}) {
     const windowWidth = useWindowDimensions().width;
     const windowHeight = useWindowDimensions().height;
-    const [keyboard, setKeyboard] = useState(true);
+    const [keyboard, setKeyboard] = useState(false);
 
     useEffect(() => {
         Keyboard.addListener('keyboardDidShow', _keyboardDidShow);

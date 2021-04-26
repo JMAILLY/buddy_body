@@ -30,7 +30,7 @@ export function useAuth() {
     const auth = React.useMemo(
         () => ({
             login: async (email, password) => {
-                const {data} = await Axios.post(config.API_URL + '/users/login', {
+                const {data} = await Axios.post('http://localhost:3001/users/login', {
                         email: email,
                         password: password
                     },{
@@ -58,7 +58,7 @@ export function useAuth() {
                 dispatch(createAction('REMOVE_USER'));
             },
             register: async (email, password) => {
-                const {data} = await Axios.post(config.API_URL + '/users/register', {
+                const {data} = await Axios.post('http://localhost:3001/users/register', {
                     email: email,
                     password: password
                 },{
@@ -71,7 +71,7 @@ export function useAuth() {
                 return data
             },
             isEmailInUse: async (email) => {
-                const {data} = await Axios.post(config.API_URL + '/users/isEmailInUse', {
+                const {data} = await Axios.post('http://localhost:3001/users/isEmailInUse', {
                     email: email,
                     },{
                         headers: {

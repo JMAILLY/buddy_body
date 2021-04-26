@@ -30,14 +30,14 @@ export default function ProfileStep1Screen({navigation}) {
                     }}/>
                 </View>
                 <View style={styles.contentMessage}>
-                    <Text style={styles.message}>For security reasons,<br/> your Lastname will not be displayed. <br/><br/>Only your Firstname will be used to find the best match for you !</Text>
+                    <Text style={styles.message}>For security reasons,{'\n'} your Lastname will not be displayed. {'\n'}{'\n'}Only your Firstname will be used to find the best match for you !</Text>
                 </View>
             </View>
             <View style={styles.buttons}>
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep2Screen'}
                              ButtonText={'Continue'}
-                             disabled={!(lastname && firstname)}
+                             // disabled={!(lastname && firstname)}
                 params={{firstname:firstname,lastname:lastname}}/>
             </View>
         </View>

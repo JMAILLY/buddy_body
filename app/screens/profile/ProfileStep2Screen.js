@@ -7,8 +7,6 @@ import StepNum from "../../components/StepNum";
 
 export default function ProfileStep2Screen({route,navigation}) {
     const {logout} = React.useContext(AuthContext);
-    const [firstname, setFirstname] = useState(route.params.params.firstname);
-    const [lastname, setLastname] = useState(route.params.params.lastname);
     const [gender, setGender] = useState('');
 
     return (
@@ -43,15 +41,15 @@ export default function ProfileStep2Screen({route,navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.contentMessage}>
-                    <Text style={styles.message}>To give you a custom experience,<br/> we need some basic informations of you.</Text>
+                    <Text style={styles.message}>To give you a custom experience,{'\n'} we need some basic informations of you.</Text>
                 </View>
             </View>
             <View style={styles.buttons}>
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep3Screen'}
                              ButtonText={'Continue'}
-                             disabled={!(gender)}
-                             params={{firstname:firstname,lastname:lastname,gender:gender}}/>
+                             // disabled={!(gender)}
+                             params={Object.assign(route.params.params, {gender:gender})}/>
             </View>
         </View>
     );
@@ -119,7 +117,6 @@ const styles = StyleSheet.create({
         height: 200,
         borderRadius: 25,
         borderWidth: 2,
-        borderStyle : 'solid',
         borderColor : 'transparent',
     },
 });
