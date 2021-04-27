@@ -42,7 +42,7 @@ export default function ProfileStep4Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep5Screen'}
                              ButtonText={'Continue'}
-                    // disabled={!(date)}
+                    // disabled={!(country)}
                              params={Object.assign(route.params.params, {country:country})}/>
             </View>
         </View>
