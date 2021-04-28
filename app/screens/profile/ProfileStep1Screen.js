@@ -35,7 +35,7 @@ export default function ProfileStep1Screen({navigation}) {
             </View>
             <View style={styles.buttons}>
                 <BasicButton data={'plain'}
-                             onButtonClick={'ProfileStep2Screen'}
+                             onButtonClick={'ProfileStep7Screen'}
                              ButtonText={'Continue'}
                              // disabled={!(lastname && firstname)}
                 params={{firstname:firstname,lastname:lastname}}/>
