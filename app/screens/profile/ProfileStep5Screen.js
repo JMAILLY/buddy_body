@@ -35,7 +35,7 @@ export default function ProfileStep5Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep6Screen'}
                              ButtonText={'Continue'}
-                    // disabled={!(goal)}
+                    disabled={!(goal)}
                              params={Object.assign(route.params.params, {goal:goal})}/>
             </View>
         </View>

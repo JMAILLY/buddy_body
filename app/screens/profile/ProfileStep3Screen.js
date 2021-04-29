@@ -62,7 +62,7 @@ export default function ProfileStep3Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep4Screen'}
                              ButtonText={'Continue'}
-                             // disabled={!(date)}
+                             disabled={!(date)}
                              params={Object.assign(route.params.params, {date:date})}/>
             </View>
         </View>

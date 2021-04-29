@@ -25,7 +25,7 @@ export default function ProfileStep1Screen({navigation}) {
                         setFirstname(e.target.value);
                     }}/>
                     <Text style={styles.label2}>Lastname</Text>
-                    <TextInput style={styles.input} secureTextEntry={true} placeholder={'Lastname'} onChange={(e) => {
+                    <TextInput style={styles.input} placeholder={'Lastname'} onChange={(e) => {
                         setLastname(e.target.value);
                     }}/>
                 </View>
@@ -35,9 +35,9 @@ export default function ProfileStep1Screen({navigation}) {
             </View>
             <View style={styles.buttons}>
                 <BasicButton data={'plain'}
-                             onButtonClick={'ProfileStep7Screen'}
+                             onButtonClick={'ProfileStep2Screen'}
                              ButtonText={'Continue'}
-                             // disabled={!(lastname && firstname)}
+                             disabled={!(lastname && firstname)}
                 params={{firstname:firstname,lastname:lastname}}/>
             </View>
         </View>

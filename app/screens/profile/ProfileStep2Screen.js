@@ -48,7 +48,7 @@ export default function ProfileStep2Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep3Screen'}
                              ButtonText={'Continue'}
-                             // disabled={!(gender)}
+                             disabled={!(gender)}
                              params={Object.assign(route.params.params, {gender:gender})}/>
             </View>
         </View>

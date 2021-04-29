@@ -13,6 +13,7 @@ export default function ProfileStep4Screen({route,navigation}) {
     const [withCountryNameButton, setWithCountryNameButton] = useState(true);
     const onSelect = (country) => {
         setCountryCode(country.cca2)
+        setCountry(country.cca2)
     }
     return (
         <View style={styles.container}>
@@ -42,7 +43,7 @@ export default function ProfileStep4Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep5Screen'}
                              ButtonText={'Continue'}
-                    // disabled={!(country)}
+                    disabled={!(country)}
                              params={Object.assign(route.params.params, {country:country})}/>
             </View>
         </View>
