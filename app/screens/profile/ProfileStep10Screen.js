@@ -7,14 +7,35 @@ import HorizontalPicker from '@vseslav/react-native-horizontal-picker';
 import StepNum from "../../components/StepNum";
 import CountryPicker from "react-native-country-picker-modal";
 import LinearGrad from "../../components/LinearGrad";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {createAction} from "../../utils/createAction";
 
 export default function ProfileStep10Screen({route, navigation}) {
-    const {logout} = React.useContext(AuthContext);
+    const {completeProfile} = React.useContext(AuthContext);
     const [picture, setPicture] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleFinish = async (e) => {
         e.preventDefault()
-        console.log(route.params)
+        console.log(route.params.params.firstname)
+        try {
+            let response = await completeProfile(
+                route.params.params.firstname,
+                route.params.params.lastname,
+                route.params.params.activity,
+                route.params.params.country,
+                route.params.params.date,
+                route.params.params.gender,
+                route.params.params.goal,
+                route.params.params.goalTime,
+                route.params.params.goalWeight,
+                route.params.params.height,
+                route.params.params.picture,
+                route.params.params.weight,
+                route.params.params.interests);
+        } catch (e) {
+            setMessage(e.message);
+        }
     }
 
     return (
@@ -92,7 +113,7 @@ export default function ProfileStep10Screen({route, navigation}) {
             </View>
             <View style={styles.buttons}>
                 <TouchableOpacity style={[styles.button,styles.plain]} onPress={handleFinish}>
-                    <Text style={[styles.buttonText,styles.plainText]}>Continue</Text>
+                    <Text style={[styles.buttonText,styles.plainText]}>Finish</Text>
                     <LinearGrad/>
                 </TouchableOpacity>
             </View>

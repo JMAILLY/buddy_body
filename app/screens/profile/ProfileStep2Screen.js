@@ -8,7 +8,6 @@ import StepNum from "../../components/StepNum";
 export default function ProfileStep2Screen({route,navigation}) {
     const {logout} = React.useContext(AuthContext);
     const [gender, setGender] = useState('');
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>

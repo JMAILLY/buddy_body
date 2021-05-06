@@ -6,7 +6,6 @@ import LinearGrad from "../../components/LinearGrad";
 
 export default function ProfileStartScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
-
     //To next profile step
     const handleNext = async (e) => {
         e.preventDefault()

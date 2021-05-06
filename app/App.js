@@ -27,7 +27,6 @@ function App() {
     };
 
     function renderScreens() {
-
         return state.user ? (
             <RootStack.Screen name={'MainStack'}>
                 {() => (

@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {AuthContext} from '../contexts/AuthContext';
 
-export default function HomeScreen({navigation}) {
+export default function ChatScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
-    navigation.openDrawer()
     return (
         <View style={styles.container}>
             <Text>Home</Text>

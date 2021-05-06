@@ -4,8 +4,10 @@ import {Button, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import StepNum from "../../components/StepNum";
+import {useAuth} from "../../hooks/useAuth";
 
 export default function ProfileStep1Screen({navigation}) {
+    const {auth, state} = useAuth();
     const {logout} = React.useContext(AuthContext);
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
