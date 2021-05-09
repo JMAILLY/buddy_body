@@ -57,7 +57,7 @@ export default function HeaderAuth({navigation}) {
 
 const styles = StyleSheet.create({
     container : {
-        backgroundColor: 'white',
+
     },
     content : {
         padding: 20,

@@ -27,7 +27,7 @@ export default function HeaderReturn({navigation}) {
 
 const styles = StyleSheet.create({
     container : {
-        backgroundColor: 'white',
+
     },
     content : {
         padding: 20,

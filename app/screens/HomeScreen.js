@@ -5,7 +5,6 @@ import {AuthContext} from '../contexts/AuthContext';
 
 export default function HomeScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
-    navigation.openDrawer()
     return (
         <View style={styles.container}>
             <Text>Home</Text>
@@ -23,7 +22,6 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
