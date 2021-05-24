@@ -1,9 +1,11 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View} from 'react-native';
 
 export default function CustomTabBar({state, descriptors, navigation}) {
+    const windowWidth = useWindowDimensions().width;
+
     return (
-        <View style={[styles.container]}>
+        <View style={[styles.container, {width: windowWidth}]}>
             {state.routes.map((route, index) => {
                 const {options} = descriptors[route.key];
                 const label =
@@ -54,6 +56,7 @@ export default function CustomTabBar({state, descriptors, navigation}) {
                         onPress={onPress}
                         onLongPress={onLongPress}
                         style={[styles.item, {flex: 1}]}
+                        key={index}
                     >
                         <Image
                             style={styles.picto}
@@ -90,6 +93,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 20.00,
         elevation: 24,
+
+        position: 'absolute',
+        bottom: 0,
+        left:0,
+        backgroundColor: 'white',
+
     },
     item: {
         textAlign: 'center',

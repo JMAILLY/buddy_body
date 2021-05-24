@@ -45,6 +45,18 @@ export function useAuth() {
                         email: data[0].email,
                         firstname: data[0].firstname,
                         lastname: data[0].lastname,
+                        activity: data[0].activity,
+                        country: data[0].country,
+                        date: data[0].date,
+                        gender: data[0].gender,
+                        goal: data[0].goal,
+                        goalTime: data[0].goalTime,
+                        goalWeight: data[0].goalWeight,
+                        height: data[0].height,
+                        picture: data[0].picture,
+                        weight: data[0].weight,
+                        interests: data[0].interests,
+                        idGroup: data[0].idGroup,
                     };
                     await AsyncStorage.setItem('user', JSON.stringify(user))
                     dispatch(createAction('SET_USER', user));

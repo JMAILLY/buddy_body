@@ -6,7 +6,7 @@ export default function HomeScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
+            <Text>Work in Progress !</Text>
             <Button
                 name={'log-out'}
                 onPress={() => {

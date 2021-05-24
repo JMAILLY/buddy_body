@@ -6,14 +6,7 @@ export default function CalendarScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
-            <Button
-                name={'log-out'}
-                onPress={() => {
-                    logout();
-                }}>
-                ok
-            </Button>
+            <Text>Work in Progress !</Text>
         </View>
     );
 }

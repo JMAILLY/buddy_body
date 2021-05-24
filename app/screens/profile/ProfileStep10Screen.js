@@ -11,8 +11,6 @@ export default function ProfileStep10Screen({route, navigation}) {
     const [message, setMessage] = useState('');
     const {auth, state} = useAuth();
 
-    console.log(state.user)
-
     const handleFinish = async (e) => {
         e.preventDefault()
         try {

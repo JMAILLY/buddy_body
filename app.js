@@ -11,8 +11,24 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+
 app.use(express.json());
 app.use(cors())
+
+const server = require("http").createServer(app);
+const io = require("socket.io")(8080, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on("connection", socket => {
+  socket.on("chat message", msg => {
+    console.log(msg);
+    io.emit("chat message", msg);
+  });
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
