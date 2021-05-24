@@ -3,14 +3,18 @@ import React, { useState, useEffect } from 'react';
 import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import LinearGrad from "../../components/LinearGrad";
+import {useAuth} from "../../hooks/useAuth";
 
 export default function ProfileStartScreen({navigation}) {
     const {logout} = React.useContext(AuthContext);
+    const {auth, state} = useAuth();
     //To next profile step
     const handleNext = async (e) => {
         e.preventDefault()
         navigation.navigate('ProfileStep1Screen')
     }
+
+
 
     //Disable Skip, it's now necessary to complete the profile to use the app
     // const handleSkip = async (e) => {

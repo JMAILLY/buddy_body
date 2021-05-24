@@ -1,23 +1,20 @@
-import {StatusBar} from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
-import BasicButton from "../../components/buttons/BasicButton";
-import HorizontalPicker from '@vseslav/react-native-horizontal-picker';
 import StepNum from "../../components/StepNum";
-import CountryPicker from "react-native-country-picker-modal";
 import LinearGrad from "../../components/LinearGrad";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createAction} from "../../utils/createAction";
+import {useAuth} from "../../hooks/useAuth";
 
 export default function ProfileStep10Screen({route, navigation}) {
     const {completeProfile} = React.useContext(AuthContext);
     const [picture, setPicture] = useState('');
     const [message, setMessage] = useState('');
+    const {auth, state} = useAuth();
+
+    console.log(state.user)
 
     const handleFinish = async (e) => {
         e.preventDefault()
-        console.log(route.params.params.firstname)
         try {
             let response = await completeProfile(
                 route.params.params.firstname,
@@ -32,7 +29,8 @@ export default function ProfileStep10Screen({route, navigation}) {
                 route.params.params.height,
                 route.params.params.picture,
                 route.params.params.weight,
-                route.params.params.interests);
+                route.params.params.interests,
+            );
         } catch (e) {
             setMessage(e.message);
         }
