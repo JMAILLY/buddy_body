@@ -1,28 +1,30 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, useWindowDimensions, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import LinearGrad from "../LinearGrad";
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-export default function BasicButton({data,onButtonClick, ButtonText, params, disabled=false}) {
+export default function BasicButton({data, onButtonClick, ButtonText, params, disabled = false}) {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity style={[styles.button,(data === "plain") ? styles.plain : (data === "white") ? styles.white : (data === "transparent") ? styles.transparent : (data === "clear") ? styles.clear : styles.clearWhite]}
-                          onPress={() => onButtonClick ? navigation.navigate(onButtonClick, {
-                              params : params
-                          }) : ''}
-                          disabled={disabled}>
+        <TouchableOpacity
+            style={[styles.button, (data === "plain") ? styles.plain : (data === "white") ? styles.white : (data === "transparent") ? styles.transparent : (data === "clear") ? styles.clear : styles.clearWhite]}
+            onPress={() => onButtonClick ? navigation.navigate(onButtonClick, {
+                params: params
+            }) : ''}
+            disabled={disabled}>
             {!!ButtonText &&
-                <Text style={[styles.text,(data === "plain") ? styles.plainText : (data === "white") ? styles.whiteText : (data === "transparent") ? styles.transparentText : (data === "clear") ? styles.clearText : styles.clearWhiteText]}>{ButtonText}</Text>
+            <Text
+                style={[styles.text, (data === "plain") ? styles.plainText : (data === "white") ? styles.whiteText : (data === "transparent") ? styles.transparentText : (data === "clear") ? styles.clearText : styles.clearWhiteText]}>{ButtonText}</Text>
             }
             {data === "plain" &&
-                <LinearGrad/>
+            <LinearGrad/>
             }
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-    button : {
+    button: {
         height: 50,
         borderRadius: 100,
         alignSelf: 'stretch',
@@ -38,41 +40,39 @@ const styles = StyleSheet.create({
         // shadowRadius: 10.00,
         // elevation: 1,
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14
     },
-    plain : {
-
-    },
-    plainText : {
+    plain: {},
+    plainText: {
         color: 'white',
     },
-    white : {
-        backgroundColor : 'white',
+    white: {
+        backgroundColor: 'white',
     },
-    whiteText : {
-        color : '#34CC98'
+    whiteText: {
+        color: '#34CC98'
     },
-    transparent : {
-        backgroundColor : 'transparent',
-        borderWidth : 2,
-        borderStyle : 'solid',
-        borderColor : '#34CC98'
+    transparent: {
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        borderStyle: 'solid',
+        borderColor: '#34CC98'
     },
-    transparentText : {
-        color : '#34CC98'
+    transparentText: {
+        color: '#34CC98'
     },
     clear: {
-        backgroundColor : 'transparent',
+        backgroundColor: 'transparent',
     },
-    clearText : {
-        color : '#34CC98'
+    clearText: {
+        color: '#34CC98'
     },
     clearWhite: {
-        backgroundColor : 'transparent',
+        backgroundColor: 'transparent',
     },
-    clearWhiteText : {
-        color : 'white'
+    clearWhiteText: {
+        color: 'white'
     },
 });

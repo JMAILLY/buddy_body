@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import config from '../config';
+import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../contexts/AuthContext';
 import BasicButton from "../components/buttons/BasicButton";
 import LinearGrad from "../components/LinearGrad";
@@ -16,7 +15,7 @@ function LoginScreen({navigation}) {
         e.preventDefault()
         try {
             let response = await login(email, password);
-            if (response.message){
+            if (response.message) {
                 setMessage(response.message)
             }
         } catch (e) {
@@ -40,8 +39,8 @@ function LoginScreen({navigation}) {
                     <Text style={styles.message}>{message}</Text>
                 </View>
                 <View style={styles.content}>
-                    <TouchableOpacity style={[styles.button,styles.plain]} onPress={handleLogin}>
-                        <Text style={[styles.text,styles.plainText]}>Continue</Text>
+                    <TouchableOpacity style={[styles.button, styles.plain]} onPress={handleLogin}>
+                        <Text style={[styles.text, styles.plainText]}>Continue</Text>
                         <LinearGrad/>
                     </TouchableOpacity>
                     <BasicButton data={'clear'}
@@ -58,18 +57,18 @@ const styles = StyleSheet.create({
         flex: 1,
 
     },
-    title : {
-        fontWeight : 'bold',
-        fontSize : 16,
+    title: {
+        fontWeight: 'bold',
+        fontSize: 16,
         textAlign: 'center',
         padding: 25
     },
-    full :{
+    full: {
         flex: 1,
         alignSelf: 'stretch',
         justifyContent: 'center',
     },
-    wrapper : {
+    wrapper: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
@@ -80,7 +79,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 130,
     },
-    button : {
+    button: {
         height: 50,
         borderRadius: 100,
         alignSelf: 'stretch',
@@ -88,28 +87,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         overflow: 'hidden'
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14
     },
-    plain : {
+    plain: {
         marginBottom: 15
     },
-    plainText : {
+    plainText: {
         color: 'white',
     },
-    label : {
+    label: {
         color: '#34CC98',
         fontSize: 12,
         marginBottom: 5
     },
-    label2 : {
+    label2: {
         color: '#34CC98',
         fontSize: 12,
         marginBottom: 5,
         marginTop: 15
     },
-    input : {
+    input: {
         borderRadius: 30,
         borderWidth: 2,
         borderColor: '#34CC98',
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         paddingBottom: 15
     },
-    message : {
+    message: {
         fontWeight: '600',
         marginTop: 30,
         textAlign: 'center'

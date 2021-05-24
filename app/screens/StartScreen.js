@@ -1,7 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {AuthContext} from '../contexts/AuthContext';
+import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import BasicButton from "../components/buttons/BasicButton";
 
 export default function StartScreen({navigation}) {
@@ -31,21 +29,21 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
     },
-    content : {
+    content: {
         alignSelf: 'stretch',
         height: 165
     },
-    sig : {
+    sig: {
         flexDirection: 'row',
         marginTop: 25,
         textAlign: 'center',
         justifyContent: 'center'
     },
-    signin : {
+    signin: {
         fontWeight: '600',
     },
-    signinLink : {
+    signinLink: {
         fontWeight: '700',
-        color : '#39BAC4'
+        color: '#39BAC4'
     }
 });

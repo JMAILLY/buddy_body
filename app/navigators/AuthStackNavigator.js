@@ -13,36 +13,39 @@ const LoginStack = createStackNavigator();
 const RegisterStack = createStackNavigator();
 
 export function AuthStackNavigator() {
-  return (
-    <AuthStack.Navigator
-      mode={'modal'}
-      screenOptions={{
-        headerShown: false,
-      }}>
-        <AuthStack.Screen options={{headerShown: true, header: props => <HeaderStart {...props}/> }} name={'StartScreen'} component={StartScreen} />
-        <AuthStack.Screen name={'TutorialScreen'} component={TutorialScreen} />
-        <AuthStack.Screen name={'LoginStack'}>
-        {() => (
-          <LoginStack.Navigator
-            mode={'card'}
+    return (
+        <AuthStack.Navigator
+            mode={'modal'}
             screenOptions={{
-              headerShown: false,
+                headerShown: false,
             }}>
-            <LoginStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/> }} name={'LoginScreen'} component={LoginScreen} />
-          </LoginStack.Navigator>
-        )}
-        </AuthStack.Screen>
-        <AuthStack.Screen name={'RegisterStack'} >
-            {() => (
-                <RegisterStack.Navigator
-                    mode={'card'}
-                    screenOptions={{
-                      headerShown: false,
-                    }}>
-                    <RegisterStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/> }} name={'RegisterScreen'} component={RegisterScreen} />
-                </RegisterStack.Navigator>
-            )}
-        </AuthStack.Screen>
-    </AuthStack.Navigator>
-  );
+            <AuthStack.Screen options={{headerShown: true, header: props => <HeaderStart {...props}/>}}
+                              name={'StartScreen'} component={StartScreen}/>
+            <AuthStack.Screen name={'TutorialScreen'} component={TutorialScreen}/>
+            <AuthStack.Screen name={'LoginStack'}>
+                {() => (
+                    <LoginStack.Navigator
+                        mode={'card'}
+                        screenOptions={{
+                            headerShown: false,
+                        }}>
+                        <LoginStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/>}}
+                                           name={'LoginScreen'} component={LoginScreen}/>
+                    </LoginStack.Navigator>
+                )}
+            </AuthStack.Screen>
+            <AuthStack.Screen name={'RegisterStack'}>
+                {() => (
+                    <RegisterStack.Navigator
+                        mode={'card'}
+                        screenOptions={{
+                            headerShown: false,
+                        }}>
+                        <RegisterStack.Screen options={{headerShown: true, header: props => <HeaderAuth {...props}/>}}
+                                              name={'RegisterScreen'} component={RegisterScreen}/>
+                    </RegisterStack.Navigator>
+                )}
+            </AuthStack.Screen>
+        </AuthStack.Navigator>
+    );
 }

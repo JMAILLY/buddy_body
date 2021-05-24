@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import StepNum from "../../components/StepNum";
 
-export default function ProfileStep2Screen({route,navigation}) {
+export default function ProfileStep2Screen({route, navigation}) {
     const {logout} = React.useContext(AuthContext);
     const [gender, setGender] = useState('');
     return (
@@ -18,7 +17,7 @@ export default function ProfileStep2Screen({route,navigation}) {
             </View>
             <View style={styles.content}>
                 <View style={styles.content2}>
-                    <TouchableOpacity style={{marginRight:10}} onPress={() => setGender('male')}>
+                    <TouchableOpacity style={{marginRight: 10}} onPress={() => setGender('male')}>
                         <Image
                             style={[styles.image, gender === 'male' ? styles.border : '']}
                             source={{
@@ -28,7 +27,7 @@ export default function ProfileStep2Screen({route,navigation}) {
                         />
                         <Text style={styles.text}>Male</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{marginLeft:10}} onPress={() => setGender('female')}>
+                    <TouchableOpacity style={{marginLeft: 10}} onPress={() => setGender('female')}>
                         <Image
                             style={[styles.image, gender === 'female' ? styles.border : '']}
                             source={{
@@ -40,7 +39,8 @@ export default function ProfileStep2Screen({route,navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.contentMessage}>
-                    <Text style={styles.message}>To give you a custom experience,{'\n'} we need some basic informations of you.</Text>
+                    <Text style={styles.message}>To give you a custom experience,{'\n'} we need some basic informations
+                        of you.</Text>
                 </View>
             </View>
             <View style={styles.buttons}>
@@ -48,7 +48,7 @@ export default function ProfileStep2Screen({route,navigation}) {
                              onButtonClick={'ProfileStep3Screen'}
                              ButtonText={'Continue'}
                              disabled={!(gender)}
-                             params={Object.assign(route.params.params, {gender:gender})}/>
+                             params={Object.assign(route.params.params, {gender: gender})}/>
             </View>
         </View>
     );
@@ -63,21 +63,21 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
     },
-    border : {
+    border: {
         borderColor: '#34CC98',
     },
     content: {
         justifyContent: 'center',
     },
-    content2 : {
+    content2: {
         flexDirection: 'row',
     },
-    contentMessage : {
+    contentMessage: {
         marginTop: 50,
     },
     message: {
-        fontWeight : '600',
-        fontSize : 16,
+        fontWeight: '600',
+        fontSize: 16,
         marginTop: 30,
         textAlign: 'center',
     },
@@ -85,24 +85,24 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 115
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14,
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14,
         marginTop: 30,
         textAlign: 'center',
     },
-    label : {
+    label: {
         color: '#34CC98',
         fontSize: 12,
         marginBottom: 5
     },
-    label2 : {
+    label2: {
         color: '#34CC98',
         fontSize: 12,
         marginBottom: 5,
         marginTop: 15
     },
-    input : {
+    input: {
         borderRadius: 30,
         borderWidth: 2,
         borderColor: '#34CC98',
@@ -112,10 +112,10 @@ const styles = StyleSheet.create({
         paddingBottom: 15
     },
     image: {
-        width:150,
+        width: 150,
         height: 200,
         borderRadius: 25,
         borderWidth: 2,
-        borderColor : 'transparent',
+        borderColor: 'transparent',
     },
 });

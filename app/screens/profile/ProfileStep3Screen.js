@@ -1,14 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, StyleSheet, Text, TouchableOpacity, View,TextInput,Platform} from 'react-native';
-import {AuthContext} from '../../contexts/AuthContext';
+import React, {useState} from 'react';
+import {Platform, StyleSheet, Text, TextInput, View} from 'react-native';
 import BasicButton from "../../components/buttons/BasicButton";
 
 //for future native datetime picking solution
-import DateTimePicker from '@react-native-community/datetimepicker';
 import StepNum from "../../components/StepNum";
 
-export default function ProfileStep3Screen({route,navigation}) {
+export default function ProfileStep3Screen({route, navigation}) {
     const [gender, setGender] = useState('');
     const [day, setDay] = useState(0);
     const [month, setMonth] = useState(0);
@@ -19,17 +16,17 @@ export default function ProfileStep3Screen({route,navigation}) {
     const cleanDay = (text) => {
         const cleanNumber = text.replace(/[^0-9]/g, "");
         setDay(cleanNumber);
-        setDate(Date.parse(year+'-'+month+'-'+day));
+        setDate(Date.parse(year + '-' + month + '-' + day));
     }
     const cleanMonth = (text) => {
         const cleanNumber = text.replace(/[^0-9]/g, "");
         setMonth(cleanNumber);
-        setDate(Date.parse(year+'-'+month+'-'+day));
+        setDate(Date.parse(year + '-' + month + '-' + day));
     }
     const cleanYear = (text) => {
         const cleanNumber = text.replace(/[^0-9]/g, "");
         setYear(cleanNumber);
-        setDate(Date.parse(year+'-'+month+'-'+day));
+        setDate(Date.parse(year + '-' + month + '-' + day));
     }
 
     return (
@@ -42,15 +39,18 @@ export default function ProfileStep3Screen({route,navigation}) {
             </View>
             <View style={styles.content}>
                 <View style={styles.contentTop}>
-                    <TextInput style={styles.input} maxLength = {2} keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"}  onChange={(e) => {
+                    <TextInput style={styles.input} maxLength={2}
+                               keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"} onChange={(e) => {
                         cleanDay(e.target.value);
                     }}/>
                     <Text style={styles.slash}>/</Text>
-                    <TextInput style={styles.input} maxLength = {2} keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"}  onChange={(e) => {
+                    <TextInput style={styles.input} maxLength={2}
+                               keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"} onChange={(e) => {
                         cleanMonth(e.target.value);
                     }}/>
                     <Text style={styles.slash}>/</Text>
-                    <TextInput style={styles.input} maxLength = {4} keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"}  onChange={(e) => {
+                    <TextInput style={styles.input} maxLength={4}
+                               keyboardType={Platform.OS === 'ios' ? "number-pad" : "numeric"} onChange={(e) => {
                         cleanYear(e.target.value);
                     }}/>
                 </View>
@@ -63,7 +63,7 @@ export default function ProfileStep3Screen({route,navigation}) {
                              onButtonClick={'ProfileStep4Screen'}
                              ButtonText={'Continue'}
                              disabled={!(date)}
-                             params={Object.assign(route.params.params, {date:date})}/>
+                             params={Object.assign(route.params.params, {date: date})}/>
             </View>
         </View>
     );
@@ -82,17 +82,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    contentMessage : {
+    contentMessage: {
         marginTop: 50,
     },
-    contentTop : {
+    contentTop: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
     },
     message: {
-        fontWeight : '600',
-        fontSize : 16,
+        fontWeight: '600',
+        fontSize: 16,
         marginTop: 30,
         textAlign: 'center',
     },
@@ -100,13 +100,13 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 115
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14,
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14,
         marginTop: 30,
         textAlign: 'center',
     },
-    input : {
+    input: {
         borderRadius: 25,
         backgroundColor: '#34CC98',
         color: 'white',
@@ -119,9 +119,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 24,
     },
-    slash : {
-        color : '#34CC98',
-        margin : 10,
+    slash: {
+        color: '#34CC98',
+        margin: 10,
         fontSize: 24,
     }
 });

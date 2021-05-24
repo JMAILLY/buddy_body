@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import StepNum from "../../components/StepNum";
 import LinearGrad from "../../components/LinearGrad";
@@ -110,8 +110,8 @@ export default function ProfileStep10Screen({route, navigation}) {
                 />
             </View>
             <View style={styles.buttons}>
-                <TouchableOpacity style={[styles.button,styles.plain]} onPress={handleFinish}>
-                    <Text style={[styles.buttonText,styles.plainText]}>Finish</Text>
+                <TouchableOpacity style={[styles.button, styles.plain]} onPress={handleFinish}>
+                    <Text style={[styles.buttonText, styles.plainText]}>Finish</Text>
                     <LinearGrad/>
                 </TouchableOpacity>
             </View>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 115
     },
-    button : {
+    button: {
         height: 50,
         borderRadius: 100,
         alignSelf: 'stretch',
@@ -149,13 +149,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         overflow: 'hidden'
     },
-    plain : {
+    plain: {
         marginBottom: 15
     },
-    plainText : {
+    plainText: {
         color: 'white',
     },
-    buttonText:{
+    buttonText: {
         fontWeight: 'bold',
         fontSize: 14,
     },
@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
         marginTop: 30,
         textAlign: 'center',
     },
-    interest : {
-        width:100,
-        height:100,
+    interest: {
+        width: 100,
+        height: 100,
     }
 });

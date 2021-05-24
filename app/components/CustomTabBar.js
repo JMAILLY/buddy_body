@@ -1,13 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import {AuthContext} from '../contexts/AuthContext';
+import React from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-export default function CustomTabBar({ state, descriptors, navigation }) {
+export default function CustomTabBar({state, descriptors, navigation}) {
     return (
         <View style={[styles.container]}>
             {state.routes.map((route, index) => {
-                const { options } = descriptors[route.key];
+                const {options} = descriptors[route.key];
                 const label =
                     options.tabBarLabel !== undefined
                         ? options.tabBarLabel
@@ -50,12 +48,12 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
                 return (
                     <TouchableOpacity
                         accessibilityRole="button"
-                        accessibilityState={isFocused ? { selected: true } : {}}
+                        accessibilityState={isFocused ? {selected: true} : {}}
                         accessibilityLabel={options.tabBarAccessibilityLabel}
                         testID={options.tabBarTestID}
                         onPress={onPress}
                         onLongPress={onLongPress}
-                        style={[styles.item,{ flex: 1 }]}
+                        style={[styles.item, {flex: 1}]}
                     >
                         <Image
                             style={styles.picto}
@@ -63,7 +61,7 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
                                 uri: isFocused ? imageFocus : image
                             }}
                         />
-                        <Text style={[styles.text,{ color: isFocused ? '#34CC98' : '#34CC98' }]}>
+                        <Text style={[styles.text, {color: isFocused ? '#34CC98' : '#34CC98'}]}>
                             {label}
                         </Text>
                     </TouchableOpacity>
@@ -79,10 +77,10 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 25,
 
         flexDirection: 'row',
-        borderTopWidth:2,
-        borderRightWidth:2,
-        borderLeftWidth:2,
-        borderColor:'#34CC98',
+        borderTopWidth: 2,
+        borderRightWidth: 2,
+        borderLeftWidth: 2,
+        borderColor: '#34CC98',
 
         shadowColor: "#000",
         shadowOffset: {
@@ -94,15 +92,15 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
     item: {
-        textAlign:'center',
+        textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
     },
-    text : {
+    text: {
         fontWeight: '600',
     },
-    picto : {
+    picto: {
         width: 24,
         height: 24,
     }

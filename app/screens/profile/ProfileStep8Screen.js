@@ -1,6 +1,5 @@
-import {StatusBar} from 'expo-status-bar';
-import React, {useState, useEffect} from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import HorizontalPicker from '@vseslav/react-native-horizontal-picker';
@@ -66,7 +65,7 @@ export default function ProfileStep8Screen({route, navigation}) {
                         />
                     </View>
                 </View>
-                <View style={{marginTop:75}}>
+                <View style={{marginTop: 75}}>
                     <Text style={styles.text}>In how long would you like{'\n'}to complete your goal ?</Text>
                     <View>
                         <HorizontalPicker
@@ -82,7 +81,7 @@ export default function ProfileStep8Screen({route, navigation}) {
                             style={[styles.triangle]}
                             source={{
                                 uri:
-                                " data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAYAAACksgdhAAAABHNCSVQICAgIfAhkiAAAAP5JREFUKFOFkTFLw1AUhc9J0C5xdHURbIW6+F7+gcW/oGPpklCK3epP0K0OkiyCm9LNTdB/0Jd2qKAOLq7iZBYrzZVUK61J6Jse556Pw7mXyHvSs7V57xrXb+WNmScqE3oEgoRSHyj/8r8nA5WfLtacePxCcF0gb7GzuvlcaXzMgxlImbBL4GhmEuAs0l67ENqNzretxB6BsP9MgkliTXYGqvk40xaSdD+4A7mX6Slyb1y/loF0PzgAeZW7zVQUOTSuf51+p0k/5b8eCGwUQQK8xs5KNV3KFFImPCHQKUz5HQhwGmnvmGl5ijUkWFoOySdgbVGZ4Jbg/jJg7gQ335+cUQkP1rtZAAAAAElFTkSuQmCC"
+                                    " data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAYAAACksgdhAAAABHNCSVQICAgIfAhkiAAAAP5JREFUKFOFkTFLw1AUhc9J0C5xdHURbIW6+F7+gcW/oGPpklCK3epP0K0OkiyCm9LNTdB/0Jd2qKAOLq7iZBYrzZVUK61J6Jse556Pw7mXyHvSs7V57xrXb+WNmScqE3oEgoRSHyj/8r8nA5WfLtacePxCcF0gb7GzuvlcaXzMgxlImbBL4GhmEuAs0l67ENqNzretxB6BsP9MgkliTXYGqvk40xaSdD+4A7mX6Slyb1y/loF0PzgAeZW7zVQUOTSuf51+p0k/5b8eCGwUQQK8xs5KNV3KFFImPCHQKUz5HQhwGmnvmGl5ijUkWFoOySdgbVGZ4Jbg/jJg7gQ335+cUQkP1rtZAAAAAElFTkSuQmCC"
                             }}
                         />
                     </View>
@@ -92,7 +91,7 @@ export default function ProfileStep8Screen({route, navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep9Screen'}
                              ButtonText={'Continue'}
-                    disabled={!(goalWeight && goalTime)}
+                             disabled={!(goalWeight && goalTime)}
                              params={Object.assign(route.params.params, {goalWeight: goalWeight}, {goalTime: goalTime})}/>
             </View>
         </View>
@@ -171,14 +170,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     triangle: {
-        height : 11,
-        width : 13,
+        height: 11,
+        width: 13,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 10
     },
-    months:{
-        marginTop:5,
+    months: {
+        marginTop: 5,
         color: '#34CC98',
         fontWeight: 'bold',
         textAlign: 'center'

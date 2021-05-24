@@ -1,13 +1,11 @@
 import * as React from 'react';
-import {StyleSheet, Text, View, useWindowDimensions, Dimensions, TouchableOpacity, Image} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import {Image, StyleSheet, TouchableOpacity, useWindowDimensions, View} from 'react-native';
 import LinearGrad from "../LinearGrad";
-import Svg, { Circle, Rect } from 'react-native-svg';
 
 export default function HeaderReturn({navigation}) {
     const windowWidth = useWindowDimensions().width;
     return (
-        <View style={[styles.container,{width:windowWidth}]}>
+        <View style={[styles.container, {width: windowWidth}]}>
             <View style={[styles.content]}>
                 <LinearGrad/>
                 <TouchableOpacity
@@ -26,10 +24,8 @@ export default function HeaderReturn({navigation}) {
 }
 
 const styles = StyleSheet.create({
-    container : {
-
-    },
-    content : {
+    container: {},
+    content: {
         padding: 20,
         justifyContent: 'center',
         borderBottomLeftRadius: 15,
@@ -44,7 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10.00,
         elevation: 1,
     },
-    picto : {
+    picto: {
         width: 24,
         height: 24
     }

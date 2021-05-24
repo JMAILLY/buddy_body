@@ -1,8 +1,6 @@
 import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios from 'axios';
-
-import config from '../config';
 import {createAction} from '../utils/createAction';
 
 export function useAuth() {
@@ -33,7 +31,7 @@ export function useAuth() {
                 const {data} = await Axios.post('http://localhost:3001/users/login', {
                         email: email,
                         password: password
-                    },{
+                    }, {
                         headers: {
                             'Bypass-Tunnel-Reminder': 'ok',
                             'User-Agent': 'Buddy-body',
@@ -59,9 +57,9 @@ export function useAuth() {
             },
             register: async (email, password) => {
                 const {data} = await Axios.post('http://localhost:3001/users/register', {
-                    email: email,
-                    password: password
-                },{
+                        email: email,
+                        password: password
+                    }, {
                         headers: {
                             'Bypass-Tunnel-Reminder': 'ok',
                             'User-Agent': 'Buddy-body',
@@ -72,8 +70,8 @@ export function useAuth() {
             },
             isEmailInUse: async (email) => {
                 const {data} = await Axios.post('http://localhost:3001/users/isEmailInUse', {
-                    email: email,
-                    },{
+                        email: email,
+                    }, {
                         headers: {
                             'Bypass-Tunnel-Reminder': 'ok',
                             'User-Agent': 'Buddy-body',
@@ -82,10 +80,8 @@ export function useAuth() {
                 );
                 return data
             },
-            completeProfile: async (firstname,lastname,activity,country,date,gender,goal,goalTime,goalWeight,height,picture,weight,interests) => {
+            completeProfile: async (firstname, lastname, activity, country, date, gender, goal, goalTime, goalWeight, height, picture, weight, interests) => {
                 const prevData = JSON.parse(await AsyncStorage.getItem('user'));
-                console.log('firstname ' + firstname)
-                console.log('firstname ' + lastname)
                 const {data} = await Axios.post('http://localhost:3001/users/completeProfile', {
                         email: prevData.email,
                         firstname: firstname,
@@ -101,7 +97,7 @@ export function useAuth() {
                         picture: picture,
                         weight: weight,
                         interests: interests,
-                    },{
+                    }, {
                         headers: {
                             'Bypass-Tunnel-Reminder': 'ok',
                             'User-Agent': 'Buddy-body',
@@ -109,12 +105,8 @@ export function useAuth() {
                     }
                 );
                 if (data.type !== "ok") {
-                    console.log('1')
-                    console.log(data)
                     return data
                 } else {
-                    console.log('2')
-                    console.log(data)
                     const user = {
                         email: prevData.email,
                         password: prevData.password,
@@ -132,10 +124,8 @@ export function useAuth() {
                         weight: weight,
                         interests: interests,
                     };
-                    console.log(user)
                     await AsyncStorage.setItem('user', JSON.stringify(user))
                     dispatch(createAction('SET_USER', user));
-                    console.log(JSON.parse(await AsyncStorage.getItem('user')));
                     return data
                 }
             },

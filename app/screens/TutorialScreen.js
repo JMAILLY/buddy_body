@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import LinearGrad from "../components/LinearGrad";
 import BasicButton from "../components/buttons/BasicButton";
 
@@ -21,9 +21,9 @@ export default function TutorialScreen({navigation}) {
                              onButtonClick={'RegisterStack'}
                              ButtonText={'Continue'}/>
                 <View style={styles.skip}>
-                <BasicButton data={''}
-                          onButtonClick={'RegisterStack'}
-                          ButtonText={'Skip'}/>
+                    <BasicButton data={''}
+                                 onButtonClick={'RegisterStack'}
+                                 ButtonText={'Skip'}/>
                 </View>
             </View>
         </View>
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 165
     },
-    logo : {
+    logo: {
         marginTop: 75,
         width: 150,
         height: 150
     },
-    skip : {
+    skip: {
         marginTop: 15
     }
 });

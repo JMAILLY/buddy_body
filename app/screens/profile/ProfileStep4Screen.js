@@ -1,12 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import StepNum from "../../components/StepNum";
 import CountryPicker from 'react-native-country-picker-modal'
 
-export default function ProfileStep4Screen({route,navigation}) {
+export default function ProfileStep4Screen({route, navigation}) {
     const {logout} = React.useContext(AuthContext);
     const [country, setCountry] = useState('');
     const [countryCode, setCountryCode] = useState('FR');
@@ -43,8 +42,8 @@ export default function ProfileStep4Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep5Screen'}
                              ButtonText={'Continue'}
-                    disabled={!(country)}
-                             params={Object.assign(route.params.params, {country:country})}/>
+                             disabled={!(country)}
+                             params={Object.assign(route.params.params, {country: country})}/>
             </View>
         </View>
     );
@@ -71,17 +70,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    contentMessage : {
+    contentMessage: {
         marginTop: 50,
     },
-    contentTop : {
+    contentTop: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
     },
     message: {
-        fontWeight : '600',
-        fontSize : 16,
+        fontWeight: '600',
+        fontSize: 16,
         marginTop: 30,
         textAlign: 'center',
     },
@@ -89,13 +88,13 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 115
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14,
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14,
         marginTop: 30,
         textAlign: 'center',
     },
-    input : {
+    input: {
         borderRadius: 25,
         backgroundColor: '#34CC98',
         color: 'white',
@@ -108,9 +107,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 24,
     },
-    slash : {
-        color : '#34CC98',
-        margin : 10,
+    slash: {
+        color: '#34CC98',
+        margin: 10,
         fontSize: 24,
     }
 });

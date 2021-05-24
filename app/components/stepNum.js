@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, useWindowDimensions, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import {StyleSheet, Text, View} from 'react-native';
 
 export default function StepNum({number}) {
 
@@ -8,7 +7,7 @@ export default function StepNum({number}) {
 
         <View style={styles.wrapper}>
             <View style={styles.bar}>
-                <View style={[styles.complet,{width:number*10+'%'}]}>
+                <View style={[styles.complet, {width: number * 10 + '%'}]}>
 
                 </View>
             </View>
@@ -19,7 +18,7 @@ export default function StepNum({number}) {
 }
 
 const styles = StyleSheet.create({
-    wrapper : {
+    wrapper: {
         marginTop: 30,
     },
     complet: {
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         backgroundColor: '#34CC98'
     },
-    bar : {
+    bar: {
         width: 200,
         height: 8,
         borderRadius: 25,
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10.00,
         elevation: 1,
     },
-    text : {
+    text: {
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 14,

@@ -1,12 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import StepNum from "../../components/StepNum";
-import CountryPicker from "react-native-country-picker-modal";
 
-export default function ProfileStep6Screen({route,navigation}) {
+export default function ProfileStep6Screen({route, navigation}) {
     const {logout} = React.useContext(AuthContext);
     const [activity, setActivity] = useState('');
     return (
@@ -15,19 +13,24 @@ export default function ProfileStep6Screen({route,navigation}) {
                 <View style={styles.step}>
                     <StepNum number={6}/>
                 </View>
-                <Text style={styles.text}>Activity rate during your week {'\n'}(by time, effort, physical difficulty)</Text>
+                <Text style={styles.text}>Activity rate during your week {'\n'}(by time, effort, physical
+                    difficulty)</Text>
             </View>
             <View style={styles.content}>
-                <TouchableOpacity style={[styles.item, activity === 'No physical activity' ? styles.border : '']} onPress={() => setActivity('No physical activity')}>
+                <TouchableOpacity style={[styles.item, activity === 'No physical activity' ? styles.border : '']}
+                                  onPress={() => setActivity('No physical activity')}>
                     <Text style={styles.itemText}>No physical activity</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.item, activity === 'Light physical activity' ? styles.border : '']} onPress={() => setActivity('Light physical activity')}>
+                <TouchableOpacity style={[styles.item, activity === 'Light physical activity' ? styles.border : '']}
+                                  onPress={() => setActivity('Light physical activity')}>
                     <Text style={styles.itemText}>Light physical activity</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.item, activity === 'Medium physical activity' ? styles.border : '']} onPress={() => setActivity('Medium physical activity')}>
+                <TouchableOpacity style={[styles.item, activity === 'Medium physical activity' ? styles.border : '']}
+                                  onPress={() => setActivity('Medium physical activity')}>
                     <Text style={styles.itemText}>Medium physical activity</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.item, activity === 'Hight physical activity' ? styles.border : '']} onPress={() => setActivity('Hight physical activity')}>
+                <TouchableOpacity style={[styles.item, activity === 'Hight physical activity' ? styles.border : '']}
+                                  onPress={() => setActivity('Hight physical activity')}>
                     <Text style={styles.itemText}>Hight physical activity</Text>
                 </TouchableOpacity>
             </View>
@@ -35,8 +38,8 @@ export default function ProfileStep6Screen({route,navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep7Screen'}
                              ButtonText={'Continue'}
-                    disabled={!(activity)}
-                             params={Object.assign(route.params.params, {activity:activity})}/>
+                             disabled={!(activity)}
+                             params={Object.assign(route.params.params, {activity: activity})}/>
             </View>
         </View>
     );
@@ -56,17 +59,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'stretch',
     },
-    contentMessage : {
+    contentMessage: {
         marginTop: 50,
     },
-    contentTop : {
+    contentTop: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
     },
     message: {
-        fontWeight : '600',
-        fontSize : 16,
+        fontWeight: '600',
+        fontSize: 16,
         marginTop: 30,
         textAlign: 'center',
     },
@@ -74,14 +77,14 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         height: 115
     },
-    text : {
-        fontWeight : 'bold',
-        fontSize : 14,
+    text: {
+        fontWeight: 'bold',
+        fontSize: 14,
         marginTop: 30,
         textAlign: 'center',
     },
 
-    item : {
+    item: {
         height: 75,
         borderRadius: 25,
         alignSelf: 'stretch',

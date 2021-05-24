@@ -1,6 +1,5 @@
-import {StatusBar} from 'expo-status-bar';
-import React, {useState, useEffect} from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {AuthContext} from '../../contexts/AuthContext';
 import BasicButton from "../../components/buttons/BasicButton";
 import HorizontalPicker from '@vseslav/react-native-horizontal-picker';
@@ -65,7 +64,7 @@ export default function ProfileStep7Screen({route, navigation}) {
                         />
                     </View>
                 </View>
-                <View style={{marginTop:75}}>
+                <View style={{marginTop: 75}}>
                     <Text style={styles.text}>What is your weight ?</Text>
                     <View style={styles.buttonMesure}>
                         <TouchableOpacity style={[styles.button, touchweigth === 'lbs' ? styles.buttonClicked : '']}
@@ -102,7 +101,7 @@ export default function ProfileStep7Screen({route, navigation}) {
                 <BasicButton data={'plain'}
                              onButtonClick={'ProfileStep8Screen'}
                              ButtonText={'Continue'}
-                    disabled={!(height && weight)}
+                             disabled={!(height && weight)}
                              params={Object.assign(route.params.params, {height: height}, {weight: weight})}/>
             </View>
         </View>
@@ -181,8 +180,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     triangle: {
-        height : 11,
-        width : 13,
+        height: 11,
+        width: 13,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 10
