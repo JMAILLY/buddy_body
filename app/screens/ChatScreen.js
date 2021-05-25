@@ -23,7 +23,7 @@ export default function ChatScreen({navigation}) {
 
     useEffect(
         () => {
-            socketRef.current = io.connect("localhost:3000");
+            socketRef.current = io.connect("https://buddy-body-socket.loca.lt");
             socketRef.current.on("chat message", ({name,chatMessage}) => {
                 setChatMessages([...chatMessages,{name, chatMessage}] );
             });
