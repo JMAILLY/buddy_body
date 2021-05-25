@@ -20,6 +20,10 @@ const io = require("socket.io")(3000, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
+  },
+  headers: {
+    'Bypass-Tunnel-Reminder': 'ok',
+    'User-Agent': 'Buddy-body',
   }
 });
 
