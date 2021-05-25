@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors())
 
 const server = require("http").createServer(app);
-const io = require("socket.io")(3002, {
+const io = require("socket.io")(3000, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
