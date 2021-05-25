@@ -48,7 +48,7 @@ export default function ChatScreen({navigation}) {
             <LinearGrad/>
             <HeaderChat/>
             <View style={styles.content}>
-                <View style={styles.chat}>
+                <ScrollView style={styles.chat} showsHorizontalScrollIndicator={false} ref={ref => {this.scrollView = ref}} onContentSizeChange={() => this.scrollView.scrollToEnd({animated: true})}>
                     {
                         chatMessages.map(({ name, chatMessage }, index) => (
                             <View style={[styles.chatmessage,isMyMessage(name) ? styles.right : styles.left]}>
@@ -65,7 +65,7 @@ export default function ChatScreen({navigation}) {
                             </View>
                         ))
                     }
-                </View>
+                </ScrollView>
                 <View style={styles.inputs}>
                     <TouchableOpacity style={styles.logoContainer}>
                         <Image
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         maxWidth: 'auto'
     },
     imgright :{
-        order: 2,
+        // order: 2,
     },
     left : {
         justifyContent: 'flex-start',
