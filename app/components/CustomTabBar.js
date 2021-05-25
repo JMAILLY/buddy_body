@@ -14,6 +14,7 @@ export default function CustomTabBar({state, descriptors, navigation}) {
                         : options.title !== undefined
                         ? options.title
                         : route.name;
+
                 const image =
                     options.title === "Home"
                         ? "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAApxJREFUSEu1ldtuElEUhtfaESpX8Ab6Bp0mLRQoMKOJaYymktp6qJqqD6CPolcmGrVWrEVTicfbGS2HOZgIj8AbtFfaprDM7A1spjMD9KJcsvf6v/Wvwx6EU/7hKevDxABF1xNTcKgDIcQwohmatjdJchMBFL2SmMKYDgQKAgIRNieFjAVwcRbtibMWEQACmyaCZgyjY52MBAhxpgMwBYm1/tGhmgCAv3DWEJDxTkIBQhx1AlAQWeug01GbWpHXXdUrCQkZ7SQQwMUjpBOvOWsfHJHSF+83NqN/VzrAXCfxUeXyAVzxaOTInRa3oftdxlQnW2wGTYyEYFyUy98THyBZKxsAWODiQKqTXQ0UD3IChIZ54ZI2nIwHMFffegKEjxDYPgGOFfdDME5deGpdXHzcPzsGeEcIDIi6M052bWTmx0vWK9cfd09MbXGg6wU0SuRuqpNZG/yfrJabAGxaCDJwz3vLBkjYtApLM31YyvhBQACWdjkM8JaH2+k7ElAv8yCfuPvKEIKVvza4mzK+8QqYahjA3ORiTvreIGiu9l5Aszc9bpO7O1zMyhUl4OdXXgFLvRLiwNwgN1NnXgKSjS0eZGdueQCp6g65z4adWx4CfOEPiVW4GgKwXosezK9LB/USz9TO3PY6qH7kYvbCdQn49Vn0oLAUBnjFg5zUfdkDs8QzdYb64nYkWfsgnC2sDAEqvAJWPgxgvyQihN+pB9JBY1NA03e9DmrbXMzOrkrA7iceb+dlXzxBs/YLXg4n+VACrDe9ssm+cAf1beEge0O6DWi8F+A83wPCuFg2/u7DYET5x0+M5mAPhs/lKLft3PL5wE2edZ6pDM5sdAHOecQpWNyXBGGbEaybuRUjEDDJN/akd3yv6UkFxt3/D25dRShgsA+8AAAAAElFTkSuQmCC"

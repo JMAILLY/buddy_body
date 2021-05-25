@@ -24,6 +24,9 @@ export function MainStackNavigator() {
             <MainDrawer.Screen
                 name={'Chat'}
                 component={ChatScreen}
+                options={{
+                    title: 'Chat',
+                }}
             />
             <MainDrawer.Screen
                 name={'Calendar'}
