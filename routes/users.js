@@ -14,7 +14,8 @@ const db = mysql.createPool({
 
 
 /* Post Login */
-router.post('/login', cors(), (req, res, next) => {
+router.post('/login', cors(),
+    (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const sqlSelect = "SELECT * FROM users WHERE email = ? AND password = ?";
@@ -33,7 +34,8 @@ router.post('/login', cors(), (req, res, next) => {
 });
 
 /* Post Register */
-router.post('/register', cors(), (req, res, next) => {
+router.post('/register', cors(),
+    (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const sqlRegister = "INSERT INTO users (email, password) VALUES (?,?)";
@@ -49,7 +51,8 @@ router.post('/register', cors(), (req, res, next) => {
 });
 
 /* isEmailInUse */
-router.post('/isEmailInUse', cors() , (req, res, next) => {
+router.post('/isEmailInUse', cors(),
+    (req, res, next) => {
     const email = req.body.email;
     const sqlSelect = "SELECT * FROM users WHERE email = ?";
     /* Email test */
@@ -68,7 +71,8 @@ router.post('/isEmailInUse', cors() , (req, res, next) => {
 });
 
 /* completeProfile */
-router.post('/completeProfile', cors() , (req, res, next) => {
+router.post('/completeProfile', cors(),
+    (req, res, next) => {
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const activity = req.body.activity;

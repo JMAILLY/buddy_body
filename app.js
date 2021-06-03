@@ -22,7 +22,7 @@ const io = require("socket.io")(3000, {
     methods: ["GET", "POST"]
   },
   headers: {
-    'Bypass-Tunnel-Reminder': 'ok',
+    'Bypass-Tunnel-Reminder': 'true',
     'User-Agent': 'Buddy-body',
   }
 });

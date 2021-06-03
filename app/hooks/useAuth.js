@@ -28,7 +28,7 @@ export function useAuth() {
     const auth = React.useMemo(
         () => ({
             login: async (email, password) => {
-                const {data} = await Axios.post('https://buddy-body.loca.lt/users/login', {
+                const {data} = await Axios.post('https://buddy-body-prod.loca.lt/users/login', {
                         email: email,
                         password: password
                     }, {
@@ -68,7 +68,7 @@ export function useAuth() {
                 dispatch(createAction('REMOVE_USER'));
             },
             register: async (email, password) => {
-                const {data} = await Axios.post('https://buddy-body.loca.lt/users/register', {
+                const {data} = await Axios.post('https://buddy-body-prod.loca.lt/users/register', {
                         email: email,
                         password: password
                     }, {
@@ -81,7 +81,7 @@ export function useAuth() {
                 return data
             },
             isEmailInUse: async (email) => {
-                const {data} = await Axios.post('https://buddy-body.loca.lt/users/isEmailInUse', {
+                const {data} = await Axios.post('https://buddy-body-prod.loca.lt/users/isEmailInUse', {
                         email: email,
                     }, {
                         headers: {
@@ -94,7 +94,7 @@ export function useAuth() {
             },
             completeProfile: async (firstname, lastname, activity, country, date, gender, goal, goalTime, goalWeight, height, picture, weight, interests) => {
                 const prevData = JSON.parse(await AsyncStorage.getItem('user'));
-                const {data} = await Axios.post('https://buddy-body.loca.lt/users/completeProfile', {
+                const {data} = await Axios.post('https://buddy-body-prod.loca.lt/users/completeProfile', {
                         email: prevData.email,
                         firstname: firstname,
                         lastname: lastname,

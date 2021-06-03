@@ -23,9 +23,9 @@ export default function ChatScreen({navigation}) {
 
     useEffect(
         () => {
-            socketRef.current = io.connect("https://buddy-body-socket.loca.lt", {
+            socketRef.current = io.connect("https://buddy-body-socket-prod.loca.lt", {
                 extraHeaders: {
-                    'Bypass-Tunnel-Reminder': 'ok',
+                    'Bypass-Tunnel-Reminder': 'true',
                     'User-Agent': 'Buddy-body',
                 }});
             socketRef.current.on("chat message", ({name,chatMessage}) => {
